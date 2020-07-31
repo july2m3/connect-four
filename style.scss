@@ -67,6 +67,11 @@ header {
     .red {
       background-color: $red;
     }
+
+    .fall {
+      transition: all 0.2s linear;
+      transform: translateY(-1rem);
+    }
   }
 }
 

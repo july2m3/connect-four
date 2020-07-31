@@ -67,6 +67,13 @@ header .game-status {
   background-color: #f54269;
 }
 
+.game-container .row .fall {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+}
+
 .game-over-message {
   top: 10vh;
   left: 10%;

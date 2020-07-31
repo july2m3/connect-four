@@ -153,13 +153,17 @@ function displayWinningMessage() {
 function popUpCell(r: number, c: number) {
   if (isYellowTurn) {
     grid[r][c].classList.toggle('yellow');
+    grid[r][c].classList.toggle('fall');
     setTimeout(() => {
       grid[r][c].classList.toggle('yellow');
+      grid[r][c].classList.toggle('fall');
     }, 200);
   } else {
     grid[r][c].classList.toggle('red');
+    grid[r][c].classList.toggle('fall');
     setTimeout(() => {
       grid[r][c].classList.toggle('red');
+      grid[r][c].classList.toggle('fall');
     }, 200);
   }
 }
@@ -174,5 +178,4 @@ function updateGameStatus() {
   gameStatus.innerText = currentPlayer;
 }
 
-// popUpCell(1, 1);
 updateGameStatus();

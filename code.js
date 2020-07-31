@@ -139,14 +139,18 @@ function displayWinningMessage() {
 function popUpCell(r, c) {
     if (isYellowTurn) {
         grid[r][c].classList.toggle('yellow');
+        grid[r][c].classList.toggle('fall');
         setTimeout(function () {
             grid[r][c].classList.toggle('yellow');
+            grid[r][c].classList.toggle('fall');
         }, 200);
     }
     else {
         grid[r][c].classList.toggle('red');
+        grid[r][c].classList.toggle('fall');
         setTimeout(function () {
             grid[r][c].classList.toggle('red');
+            grid[r][c].classList.toggle('fall');
         }, 200);
     }
 }
@@ -158,5 +162,4 @@ function updateGameStatus() {
     gameStatus.style.color = colorForGameStatus;
     gameStatus.innerText = currentPlayer;
 }
-// popUpCell(1, 1);
 updateGameStatus();
