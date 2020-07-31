@@ -9,6 +9,7 @@ var grid = new Array();
 var cells = new Array();
 var gameContainer = document.querySelector('game-container');
 var isYellowTurn = true;
+var canClick = true;
 var rows = __spreadArrays(document.querySelectorAll('.row'));
 rows.forEach(function (row) {
     var columnsList = new Array();
@@ -40,10 +41,10 @@ for (var r = 0; r < 6; r++) {
   // and keep going!
 */
 function clickedOnCell(r, c) {
-    if (!cells[r][c].clicked) {
+    if (!cells[r][c].clicked && canClick) {
+        canClick = false;
         dropCell(r, c);
         // gameContainer.style.pointerEvents = 'none';
-        event === null || event === void 0 ? void 0 : event.stopPropagation;
     }
 }
 function dropCell(r, c) {
@@ -60,6 +61,7 @@ function dropCell(r, c) {
         cells[r][c].clicked = true;
         checkIfWinner(r, c);
         updateGameStatus();
+        canClick = true;
     }
     else {
         popUpCell(r, c);
@@ -121,9 +123,9 @@ function checkIfWinner(r, c) {
     // check up right
     if (r > 2 &&
         c < 4 &&
-        cells[r][c].color === cells[r - 1][c - 1].color &&
-        cells[r][c].color === cells[r - 2][c - 2].color &&
-        cells[r][c].color === cells[r - 3][c - 3].color) {
+        cells[r][c].color === cells[r - 1][c + 1].color &&
+        cells[r][c].color === cells[r - 2][c + 2].color &&
+        cells[r][c].color === cells[r - 3][c + 3].color) {
         displayWinningMessage();
     }
 }

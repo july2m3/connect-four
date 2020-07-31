@@ -1,15 +1,12 @@
 $margin-bottom: 5rem;
 
-//  colors
+// Colors
 $game-container-bg: hsl(214, 100%, 50%);
-// $yellow: hsl(59, 90%, 61%);
 $yellow: rgb(223, 220, 47);
-// $yellow: rgb();
 $red: hsl(347, 90%, 61%);
-// $body-bg: hsl(23, 2%, 80%);
 $body-bg: #333;
 
-// breakpoints
+// Breakpoints
 $tablet: 300px;
 $desktop: 700px;
 
@@ -54,10 +51,8 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
-  // gap: 1rem;
 
   .row {
-    // background-color: red;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr;
@@ -65,7 +60,6 @@ header {
     .column {
       background-color: white;
       clip-path: circle();
-      // border: 1px solid black;
     }
     .yellow {
       background-color: $yellow;
